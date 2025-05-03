@@ -101,3 +101,79 @@ const buyukHarfler = cumle.toUpperCase()
 console.log(kucukHarfler)
 console.log(buyukHarfler)
 
+//*********************************************
+//* TERNARY
+//*********************************************
+
+const yas = 14
+//? Ternary
+yas >= 18 ? console.log("Askerlik yapmalı") : console.log("Askerlik yapmaz")
+
+//? if-else
+if (yas > 18) {
+  console.log("Askerlik yapmalı")
+} else {
+  console.log("Askerlik yapmaz")
+}
+
+//? nested ternary
+const age = 19
+const sonuc = age <= 14 ? "cocuk " : age <= 18 ? "ergen" : "yetiskin"
+console.log(sonuc)
+
+//? if-else hali
+let durum = ""
+if (age <= 14) {
+  durum = "cocuk"
+} else if (age <= 18) {
+  durum = "ergen"
+} else {
+  durum = "yetiskin"
+}
+
+console.log(durum)
+
+//! Ornek
+const calismaSuresi = 9
+let maas = 30000
+
+//? tek durumlu senaryoda ternary icinde işlem yapma
+// calismaSuresi >= 10 ? (maas = maas * 1.5) : ""
+
+//? tek durumlu senaryoda ternary'nin bir degiskene deger aktarması işlemi
+maas = calismaSuresi >= 10 ? maas * 1.5 : maas
+console.log("MAAS:", maas)
+
+//*********************************************
+//* SHORT - CIRCUIT
+//*********************************************
+
+let salary = 40000
+let year = 5
+let marriage = true
+
+//! && operatorü (true ise yanındaki ifadeyi calistir.)
+//? Tek condition ve tek durum
+year >= 10 && (salary = salary * 1.5)
+
+//? 2 condition var ve tek durum
+// year >= 10 && marriage === true && (salary = salary * 1.5)
+
+console.log("SALARY:", salary)
+
+//! || operatorü (false ise yanındaki ifadeyi calistir.))
+const sene = 14
+let result = "ahmet"
+
+sene >= 18 || (result = "cocuk")
+console.log(result)
+
+//? falsy bir degerin tespit edilip buna göre bir degiskene baslangic degeri vermek için kullanıma çok uygundur.
+result = ""
+let myVar = result || "noname"
+console.log(myVar)
+
+//? tek durum var ise short-circuit
+//? 2 durum var ise ternary
+//? 3-6 arasi durum var ise if-else
+//? 6 dan fazla ise switch-case
