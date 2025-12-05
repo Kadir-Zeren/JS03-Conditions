@@ -143,3 +143,38 @@ let maas = 30000
 //? tek durumlu senaryoda ternary'nin bir degiskene deger aktarması işlemi
 maas = calismaSuresi >= 10 ? maas * 1.5 : maas
 console.log("MAAS:", maas)
+
+//*********************************************
+//* SHORT - CIRCUIT
+//*********************************************
+
+let salary = 40000
+let year = 5
+let marriage = true
+
+//! && operatorü (true ise yanındaki ifadeyi calistir.)
+//? Tek condition ve tek durum
+year >= 10 && (salary = salary * 1.5)
+
+//? 2 condition var ve tek durum
+// year >= 10 && marriage === true && (salary = salary * 1.5)
+
+console.log("SALARY:", salary)
+
+//! || operatorü (false ise yanındaki ifadeyi calistir.))
+const sene = 14
+let result = "ahmet"
+
+sene >= 18 || (result = "cocuk")
+console.log(result)
+
+//? falsy bir degerin tespit edilip buna göre bir degiskene baslangic degeri vermek için kullanıma çok uygundur.
+result = ""
+let myVar = result || "noname"
+console.log(myVar)
+
+//? tek durum var ise short-circuit
+//? 2 durum var ise ternary
+//? 3-6 arasi durum var ise if-else
+//? 6 dan fazla ise switch-case
+
